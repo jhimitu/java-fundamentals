@@ -1,11 +1,15 @@
 import java.util.*;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
   public static void main(String[] args) {
-    //pluralize call
-    System.out.println(pluralize("dog", 2));
-    //flipNHeads call
-    flipNHeads(2);
+    //pluralize method call
+    // System.out.println(pluralize("dog", 2));
+    //flipNHeads method call
+    // flipNHeads(2);
+    //clock method call
+    clock();
   }
 
   public static String pluralize(String word, int num) {
@@ -23,20 +27,26 @@ public class Main {
     while (heads < n) {
       double randomNum = Math.random();
       if (randomNum > .5) {
-        System.out.println("heads");
+        // System.out.println("heads");
         lastFlip = "heads";
         if (lastFlip == "heads") {
           heads++;
         }
       } else if (randomNum < .5) {
-        System.out.println("tails");
+        // System.out.println("tails");
         lastFlip = "tails";
       }
       flips++;
     }
     
     if(heads == n) {
-      System.out.println("It took " + flips + " flips to flip " + n + " heads in a row.");
+      // System.out.println("It took " + flips + " flips to flip " + n + " heads in a row.");
     }
+  }
+
+  public static void clock() {
+    LocalDateTime current = LocalDateTime.now().withNano(0);
+    
+    System.out.println(DateTimeFormatter.ISO_LOCAL_TIME.format(current));
   }
 }
