@@ -5,9 +5,9 @@ import java.time.format.DateTimeFormatter;
 public class Main {
   public static void main(String[] args) {
 
-    System.out.println(pluralize("dog", 2));
+    // System.out.println(pluralize("dog", 2));
     flipNHeads(2);
-    clock();
+    // clock();
   }
 
   //PLURALIZE
@@ -24,13 +24,15 @@ public class Main {
     int heads = 0;
     String lastFlip = "";
     
-    while (heads < n) {
+    while (heads != n) {
       double randomNum = Math.random();
       if (randomNum > .5) {
         System.out.println("heads");
-        lastFlip = "heads";
         if (lastFlip == "heads") {
           heads++;
+        } else {
+          lastFlip = "heads";
+          heads = 0;
         }
       } else if (randomNum < .5) {
         System.out.println("tails");
