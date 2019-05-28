@@ -46,8 +46,19 @@ public class Main {
 
   //CLOCK
   public static void clock() {
+    LocalDateTime past = LocalDateTime.now().withNano(0);
+    int pastSeconds = past.getSecond();
     LocalDateTime current = LocalDateTime.now().withNano(0);
+    int currentSeconds = current.getSecond();
     
-    System.out.println(DateTimeFormatter.ISO_LOCAL_TIME.format(current));
+    do {
+      if (currentSeconds - pastSeconds == 1) {
+        System.out.println(DateTimeFormatter.ISO_LOCAL_TIME.format(current));
+      } 
+      pastSeconds = currentSeconds;
+      current = LocalDateTime.now();
+      currentSeconds = current.getSecond();
+    } while (true);
   }
 }
+
