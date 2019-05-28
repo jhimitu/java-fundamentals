@@ -2,10 +2,10 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println("java working");
+    //pluralize call
     System.out.println(pluralize("dog", 2));
-
-    flipNHeads(1);
+    //flipNHeads call
+    flipNHeads(2);
   }
 
   public static String pluralize(String word, int num) {
@@ -20,7 +20,7 @@ public class Main {
     int heads = 0;
     String lastFlip = "";
     
-    while (flips < n) {
+    while (heads < n) {
       double randomNum = Math.random();
       if (randomNum > .5) {
         System.out.println("heads");
