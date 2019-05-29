@@ -24,7 +24,7 @@ public class Main {
     int heads = 0;
     String lastFlip = "";
     
-    while (heads != n) {
+    while (heads < n) {
       double randomNum = Math.random();
       if (randomNum > .5) {
         System.out.println("heads");
