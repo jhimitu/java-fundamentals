@@ -29,6 +29,13 @@ public class ArrayLists {
 
     public static int calculateAverage(int[] inputArr) {
         int average = 0;
+        int sum = 0;
+
+        for (int i = 0; i < inputArr.length; i++) {
+            sum += inputArr[i];
+        }
+
+        average = sum / inputArr.length;
         return average;
     }
 
