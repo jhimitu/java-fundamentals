@@ -22,8 +22,8 @@ public class LibraryTest {
 
     @Test public void testContainsDuplicates() {
         Library libraryForTesting = new Library();
-        boolean expected = true;
-        assertTrue("should return 'true'", ArrayLists.containsDuplicates());
+        int[] input = {1, 2, 2, 3, 4};
+        assertTrue("should return 'true'", ArrayLists.containsDuplicates(input));
     }
 
     @Test public void testCalculateAverage() {
@@ -35,12 +35,12 @@ public class LibraryTest {
 
     @Test public void testArrOfArr() {
         int[][] input = {
-                {1, 1, 1, 1},
-                {2, 2, 2, 2},
-                {3, 3, 3, 3},
-                {4, 4, 4, 4}
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
         };
-        int[] expected = input[0];
+        int[] expected = input[2];
         assertEquals("should return array with the lowest average", expected, ArrayLists.arrOfArrAverage(input));
     }
 }
