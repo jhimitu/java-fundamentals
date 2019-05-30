@@ -22,8 +22,8 @@ public class LibraryTest {
 
     @Test public void testContainsDuplicates() {
         Library libraryForTesting = new Library();
-        boolean expected = true;
-        assertTrue("should return 'true'", ArrayLists.containsDuplicates());
+        int[] input = {1, 2, 2, 3, 4};
+        assertTrue("should return 'true'", ArrayLists.containsDuplicates(input));
     }
 
     @Test public void testCalculateAverage() {

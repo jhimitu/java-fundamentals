@@ -14,8 +14,17 @@ public class ArrayLists {
         return result;
     }
 
-    public static boolean containsDuplicates() {
-        return true;
+    public static boolean containsDuplicates(int[] inputArr) {
+        int current = inputArr[0];
+
+        for (int i = 1; i < inputArr.length; i++) {
+            if (inputArr[i] == current) {
+                return true;
+            } else {
+                current = inputArr[i];
+            }
+        }
+        return false;
     }
 
     public static int calculateAverage(int[] inputArr) {
