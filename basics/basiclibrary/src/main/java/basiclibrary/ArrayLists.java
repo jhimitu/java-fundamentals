@@ -41,6 +41,15 @@ public class ArrayLists {
 
     public static int[] arrOfArrAverage(int[][] inputArr) {
         int[] result = inputArr[0];
+        int lowestAvg = calculateAverage(inputArr[0]);
+
+        for (int i = 0; i < inputArr.length; i++) {
+            int arrAvg = calculateAverage(inputArr[i]);
+            if (arrAvg < lowestAvg) {
+                lowestAvg = arrAvg;
+                result = inputArr[i];
+            }
+        }
         return result;
     }
 }
