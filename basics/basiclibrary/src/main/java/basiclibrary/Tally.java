@@ -1,5 +1,8 @@
 package basiclibrary;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.*;
 
@@ -87,5 +90,14 @@ public class Tally {
         }
 
         return winner;
+    }
+    public static void linter(Path path) {
+
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        while (reader.readLine() != null) {
+
+        }
+        System.out.println(path);
+
     }
 }
