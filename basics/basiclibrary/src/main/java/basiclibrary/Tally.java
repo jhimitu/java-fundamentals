@@ -61,7 +61,31 @@ public class Tally {
     }
 
     public static String tally(List<String> list) {
-        String result = "";
-        return result;
+        String winner = "";
+        int highestTally = 0;
+
+        HashMap<String, Integer> voteTallies = new HashMap<>();
+        ListIterator<String> iterator = list.listIterator();
+        System.out.println(list);
+
+        while (iterator.hasNext()) {
+            String currentVote = iterator.next();
+
+            voteTallies.putIfAbsent(currentVote, 1);
+
+            if (voteTallies.containsKey(currentVote)) {
+                int currentTally = voteTallies.get(currentVote);
+                voteTallies.replace(currentVote, currentTally, currentTally + 1);
+            }
+        }
+
+        for (Map.Entry<String, Integer> voteTally : voteTallies.entrySet()) {
+            if (voteTally.getValue() > highestTally) {
+                highestTally = voteTally.getValue();
+                winner = voteTally.getKey();
+            }
+        }
+
+        return winner;
     }
 }
