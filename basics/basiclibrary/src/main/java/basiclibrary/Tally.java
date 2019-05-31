@@ -5,7 +5,8 @@ import java.util.*;
 
 public class Tally {
     public static String maps(int[][] inputArr) {
-        String result = "";
+        String result;
+
         HashSet<Integer> temperatures = new HashSet<Integer>();
 
         //store high temp
@@ -17,7 +18,6 @@ public class Tally {
                 temperatures.add(arr[i]);
             }
         }
-        System.out.println(temperatures);
 
         //find the highest temperature
         Iterator highTemps = temperatures.iterator();
@@ -43,18 +43,21 @@ public class Tally {
             }
         }
 
+        //add high and low temps to string
         result = "High: " + highTemp + "\n"
-                + "Low: " + lowTemp;
+                + "Low: " + lowTemp + "\n";
 
-        for (int i = lowTemp; i < highTemp; i++) {
-            //if temperatures does not contain the temp at i
-            //list as 'never seen'
+        //iterate through min to max temps, find never seen temps
+        for (int i = lowTemp; i < highTemp + 1; i++) {
+            if (!temperatures.contains(i)) {
+                result += "Never saw temperature: " + i + "\n";
+            }
         }
 
-        System.out.println(highTemp);
-        System.out.println(lowTemp);
-        System.out.println(result);
-        return result;
+        //removes trailing newline
+        String output = result.substring(0, result.lastIndexOf("\n"));
+
+        return output;
     }
 
     public static String tally(List<String> list) {
