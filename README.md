@@ -9,3 +9,9 @@ The basics directory has a Main.java that contains the methods pluralize, flipNH
 ## Lab 03
 -created a new Class called Tally in the existing basiclibrary directy. -implemented a 'maps' and 'tally' method within the Tally class
 -wrote tests for the 'maps' and 'tally' methods
+
+
+## Lab 06
+-created a new directory called `inheritance`
+-created a new Class called `Restaurant` in the `Restauraunt.java` file
+-tests can be run in the test file `RestaurantTest.java` or by running the `./gradlew test` command
