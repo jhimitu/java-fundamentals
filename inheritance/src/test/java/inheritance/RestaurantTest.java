@@ -12,4 +12,21 @@ public class RestaurantTest {
 
         assertEquals("BDs Mongolian Bar & Grill", restaurant.getName());
     }
+
+    @Test
+    public void testToString() {
+        Restaurant restaurant = new Restaurant();
+
+        restaurant.setName("BDs Mongolian Bar & Grill");
+        restaurant.setPrice("$");
+        restaurant.setStars(4);
+
+        String expected = "Restaurant: BDs Mongolian Bar & Grill \n" +
+        "stars: 4\n" +
+        "price: $";
+
+        System.out.println(restaurant);
+        assertEquals(expected, restaurant.toString());
+    }
 }
+

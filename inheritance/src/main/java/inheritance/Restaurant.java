@@ -32,4 +32,11 @@ public class Restaurant {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public String toString() {
+        String result = "";
+        return String.format("Restaurant: %s \n" +
+                "stars: %d\n" +
+                "price: %s", this.name, this.stars, this.price);
+    }
 }
