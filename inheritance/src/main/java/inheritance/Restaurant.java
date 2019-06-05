@@ -56,8 +56,14 @@ public class Restaurant {
                 "%s", this.name, this.stars, this.price, stringBuilder);
     }
 
-    public void addReview(String name, String review, int stars) {
-        Review newReview = new Review(name, review, stars);
-        reviews.add(newReview);
+    public void addReview(Review newReview) {
+        if (reviews.size() == 0) {
+            reviews.add(newReview);
+        }
+        for (int i = 0; i < reviews.size(); i++) {
+            if (!newReview.toString().equals(reviews.get(i).toString())) {
+                reviews.add(newReview);
+            }
+        }
     }
 }

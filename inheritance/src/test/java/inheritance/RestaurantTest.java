@@ -43,12 +43,13 @@ public class RestaurantTest {
                 "price: $\n" +
                 "reviews: test";
 
-        String name = "Bryson Tiller";
-        String review = "it was great";
-        int stars = 4;
-        Review newReview = new Review(name, review, stars);
-        restaurant.addReview(name, review, stars);
-        restaurant.addReview("Summer Walker", "Great place. Great food. Would definitely recommend.", 5);
+        Review newReview = new Review("Bryson Tiller", "it was great", 4);
+        Review newReview2 = new Review("Bryson Tiller", "it was great", 4);
+        Review newReview3 = new Review("Summer Walker", "Great place. Great food. Would definitely recommend.", 5);
+        restaurant.addReview(newReview);
+        restaurant.addReview(newReview2);
+        restaurant.addReview(newReview3);
+
         System.out.println(restaurant.toString());
     }
 }
