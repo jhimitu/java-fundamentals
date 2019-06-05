@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.List;
+
 public class Review {
     private String author;
     private String body;

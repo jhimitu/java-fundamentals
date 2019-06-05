@@ -1,9 +1,13 @@
 package inheritance;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Restaurant {
     private String name;
     private int stars;
     private String price;
+    private List<Review> reviews = new ArrayList<>();
 
     public Restaurant() {
 
@@ -33,10 +37,23 @@ public class Restaurant {
         this.price = price;
     }
 
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
     public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("test");
+        if (reviews.size() != 0) {
+            for (int i = 0; i < reviews.size(); i++) {
+                stringBuilder.append(reviews.get(i));
+            }
+        }
+
         String result = "";
         return String.format("Restaurant: %s \n" +
                 "stars: %d\n" +
-                "price: %s", this.name, this.stars, this.price);
+                "price: %s\n" +
+                "reviews: %s", this.name, this.stars, this.price, stringBuilder);
     }
 }

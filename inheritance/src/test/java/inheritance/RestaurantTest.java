@@ -23,7 +23,8 @@ public class RestaurantTest {
 
         String expected = "Restaurant: BDs Mongolian Bar & Grill \n" +
         "stars: 4\n" +
-        "price: $";
+        "price: $\n" +
+        "reviews: test";
 
         System.out.println(restaurant);
         assertEquals(expected, restaurant.toString());
