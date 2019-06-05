@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.List;
+
 public class Review {
     private String author;
     private String body;
@@ -7,6 +9,12 @@ public class Review {
 
     public Review() {
 
+    }
+
+    public Review(String author, String body, int stars) {
+        this.setAuthor(author);
+        this.setBody(body);
+        this.setStars(stars);
     }
 
     public String getBody() {
@@ -35,8 +43,8 @@ public class Review {
 
     public String toString() {
         String result = "";
-        return String.format("Review: %s \n" +
+        return String.format("%s \n" +
                 "author: %s\n" +
-                "stars: %d", this.body, this.author, this.stars);
+                "stars: %d \n", this.body, this.author, this.stars);
     }
 }
