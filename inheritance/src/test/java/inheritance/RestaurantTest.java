@@ -1,6 +1,5 @@
 package inheritance;
 
-import org.checkerframework.dataflow.qual.TerminatesExecution;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
