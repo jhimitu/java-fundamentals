@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Restaurant {
     private String name;
-    private int stars;
+    private int stars = 0;
     private String price;
     private List<Review> reviews = new ArrayList<>();
 
@@ -65,5 +65,17 @@ public class Restaurant {
                 reviews.add(newReview);
             }
         }
+        this.calculateStars();
+    }
+
+    public int calculateStars() {
+        int totalStars = 0;
+        if (reviews.size() != 0) {
+            for (int i = 0; i < reviews.size(); i++) {
+               totalStars += reviews.get(i).getStars();
+            }
+        }
+        this.stars = totalStars / reviews.size();
+        return stars;
     }
 }

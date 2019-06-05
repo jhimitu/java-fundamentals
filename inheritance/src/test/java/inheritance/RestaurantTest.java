@@ -1,5 +1,6 @@
 package inheritance;
 
+import org.checkerframework.dataflow.qual.TerminatesExecution;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -50,6 +51,29 @@ public class RestaurantTest {
         restaurant.addReview(newReview2);
         restaurant.addReview(newReview3);
 
+        System.out.println(restaurant.toString());
+    }
+
+    @Test
+    public void testCalculateStars() {
+        Restaurant restaurant = new Restaurant();
+
+        restaurant.setName("BDs Mongolian Bar & Grill");
+        restaurant.setPrice("$");
+        restaurant.setStars(4);
+
+        String expected = "Restaurant: BDs Mongolian Bar & Grill \n" +
+                "stars: 4\n" +
+                "price: $\n" +
+                "reviews: test";
+
+        Review newReview = new Review("Jhene Aiko", "The food was amazing!", 4);
+        Review newReview2 = new Review("BJ The Chicago Kid", "Awesome.", 5);
+        Review newReview3 = new Review("Teyana Taylor", "it was ok.", 2);
+        restaurant.addReview(newReview);
+        restaurant.addReview(newReview2);
+        restaurant.addReview(newReview3);
+        restaurant.calculateStars();
         System.out.println(restaurant.toString());
     }
 }
