@@ -43,17 +43,21 @@ public class Restaurant {
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("test");
         if (reviews.size() != 0) {
             for (int i = 0; i < reviews.size(); i++) {
                 stringBuilder.append(reviews.get(i));
             }
         }
 
-        String result = "";
         return String.format("Restaurant: %s \n" +
                 "stars: %d\n" +
                 "price: %s\n" +
-                "reviews: %s", this.name, this.stars, this.price, stringBuilder);
+                "reviews:\n" +
+                "%s", this.name, this.stars, this.price, stringBuilder);
+    }
+
+    public void addReview(String name, String review, int stars) {
+        Review newReview = new Review(name, review, stars);
+        reviews.add(newReview);
     }
 }
